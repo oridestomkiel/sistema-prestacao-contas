@@ -1,0 +1,33 @@
+# ============================================================
+# Sistema de Prestação de Contas - Apache Configuration
+# ============================================================
+
+# Desabilitar listagem de diretórios
+Options -Indexes
+
+# Proteção do arquivo .env
+<Files ".env">
+    Require all denied
+</Files>
+
+<Files ".env.*">
+    Require all denied
+</Files>
+
+# Proteger arquivos sensíveis por extensão
+<FilesMatch "\.(sql|log|bak|backup|csv|xls|xlsx)$">
+    Require all denied
+</FilesMatch>
+
+# Proteger arquivos Git
+RedirectMatch 403 /\.git
+
+# Segurança adicional (headers)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Desabilitar assinatura do servidor
+ServerSignature Off

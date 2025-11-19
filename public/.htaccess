@@ -1,0 +1,58 @@
+# ==================================================
+# Sistema de Prestação de Contas - Apache Config
+# ==================================================
+
+# PHP-FPM Handler (existente)
+<FilesMatch \.php$>
+SetHandler "proxy:unix:/var/run/php/php8.2-fpm.sock|fcgi://zmohouse.com.br/"
+</FilesMatch>
+
+# ==================================================
+# Headers de Segurança
+# ==================================================
+
+<IfModule mod_headers.c>
+    # Prevenir clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Prevenir MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ==================================================
+# Proteção de Arquivos
+# ==================================================
+
+# Proteger arquivos de configuração
+<FilesMatch "^\.env$">
+    Require all denied
+</FilesMatch>
+
+# Bloquear acesso a arquivos sensíveis
+<FilesMatch "\.(sql|log)$">
+    Require all denied
+</FilesMatch>
+
+# ==================================================
+# Bloquear listagem de diretórios
+# ==================================================
+
+Options -Indexes
+
+# ==================================================
+# Charset UTF-8
+# ==================================================
+
+AddDefaultCharset UTF-8
+
+# ==================================================
+# Páginas de Erro Personalizadas
+# ==================================================
+
+ErrorDocument 404 /404.php

@@ -1,0 +1,76 @@
+# Environment & Secrets
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Database
+*.sql.backup
+*.sqlite
+*.db
+db/backups/
+
+# Dependencies
+node_modules/
+vendor/
+package-lock.json
+composer.lock
+
+# Build artifacts
+public/assets/css/tailwind.css
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+error_log
+debug.log
+
+# Cache & temporary files
+.cache/
+tmp/
+temp/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# Sensitive data folders
+prestacao/
+backups/
+uploads/sensitive/
+storage/
+
+# Import/Export files with sensitive data
+*.csv
+*.xls
+*.xlsx
+importar_*.php
+
+# Documentation with sensitive data (keep generic docs)
+PROJETO-SAAS-CUIDADORES.md
+SOBRE-O-SISTEMA.md
+README-PRIVATE.md
+NOTAS-PESSOAIS.md
+
+# Session data
+sessions/
+*.session
+
+# Uploads (may contain sensitive documents)
+public/uploads/
+public/comprovantes/
+
+# Temporary pages
+public/acertos.php
+public/api/acertos.php

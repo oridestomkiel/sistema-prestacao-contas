@@ -1,0 +1,40 @@
+{
+  "name": "sistema-prestacao-contas",
+  "version": "1.0.0",
+  "description": "Sistema completo e transparente para gestão financeira de cuidados com pessoas em situação de vulnerabilidade",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./public/assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/css/input.css -o ./public/assets/css/tailwind.css --watch",
+    "dev": "npm run watch:css",
+    "build": "npm run build:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oridestomkiel/sistema-prestacao-contas.git"
+  },
+  "keywords": [
+    "prestacao-contas",
+    "cuidadores",
+    "financeiro",
+    "transparencia",
+    "doacao",
+    "pix",
+    "gestao-financeira",
+    "alzheimer",
+    "idosos",
+    "vulnerabilidade"
+  ],
+  "author": "Sistema de Prestação de Contas Contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oridestomkiel/sistema-prestacao-contas/issues"
+  },
+  "homepage": "https://github.com/oridestomkiel/sistema-prestacao-contas#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  }
+}

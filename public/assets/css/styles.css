@@ -1,0 +1,566 @@
+/**
+ * Estilos customizados do Sistema de Prestação de Contas
+ * Design acolhedor e minimalista
+ */
+
+:root {
+    /* Cores principais */
+    --cor-entrada: #A8D5BA;
+    --cor-saida: #F4A5A5;
+    --cor-saldo: #3B82F6; /* Azul mais vibrante */
+    --cor-fundo: #F5F1E8;
+    --cor-texto: #4A5568;
+    --cor-branco: #FFFFFF;
+
+    /* Cores para status */
+    --cor-sucesso: #10B981; /* Verde mais vivo */
+    --cor-erro: #EF4444; /* Vermelho mais forte */
+    --cor-aviso: #F59E0B; /* Laranja/amarelo mais vibrante */
+    --cor-info: #3B82F6; /* Azul vibrante */
+
+    /* Sombras */
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --sombra-forte: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Remover bullets de listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Cards */
+.card {
+    background: var(--cor-branco);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    box-shadow: var(--sombra-media);
+    transform: translateY(-2px);
+}
+
+.card-entrada {
+    border-left: 4px solid var(--cor-entrada);
+}
+
+.card-saida {
+    border-left: 4px solid var(--cor-saida);
+}
+
+.card-saldo {
+    border-left: 4px solid var(--cor-saldo);
+}
+
+/* Botões */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-media);
+    filter: brightness(1.1);
+}
+
+.btn-primary {
+    background-color: var(--cor-saldo);
+    color: var(--cor-branco);
+}
+
+.btn-primary:hover {
+    background-color: #2563EB; /* Azul ainda mais escuro no hover */
+}
+
+.btn-success {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branco);
+}
+
+.btn-success:hover {
+    background-color: #059669; /* Verde mais escuro no hover */
+}
+
+.btn-danger {
+    background-color: var(--cor-erro);
+    color: var(--cor-branco);
+}
+
+.btn-danger:hover {
+    background-color: #DC2626; /* Vermelho mais escuro no hover */
+}
+
+.btn-warning {
+    background-color: #F59E0B; /* Amarelo/laranja */
+    color: var(--cor-branco);
+}
+
+.btn-warning:hover {
+    background-color: #D97706; /* Amarelo mais escuro no hover */
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--cor-texto);
+    color: var(--cor-texto);
+}
+
+.btn-outline:hover {
+    background-color: var(--cor-texto);
+    color: var(--cor-branco);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Inputs */
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--cor-branco);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--cor-saldo);
+    box-shadow: 0 0 0 3px rgba(165, 201, 229, 0.2);
+}
+
+.input-error {
+    border-color: var(--cor-erro);
+}
+
+/* Labels */
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--cor-texto);
+}
+
+/* Tabelas */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cor-branco);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #F7FAFC;
+}
+
+.table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--cor-texto);
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #E2E8F0;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover {
+    background-color: #F7FAFC;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge-entrada {
+    background-color: var(--cor-entrada);
+    color: #22543D;
+}
+
+.badge-saldo {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+}
+
+.badge-saida {
+    background-color: var(--cor-saida);
+    color: #742A2A;
+}
+
+.badge-sucesso {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branco);
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert-success {
+    background-color: #C6F6D5;
+    color: #22543D;
+    border-left: 4px solid var(--cor-sucesso);
+}
+
+.alert-error {
+    background-color: #FED7D7;
+    color: #742A2A;
+    border-left: 4px solid var(--cor-erro);
+}
+
+.alert-info {
+    background-color: #BEE3F8;
+    color: #2C5282;
+    border-left: 4px solid var(--cor-info);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--cor-branco);
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--sombra-forte);
+}
+
+.modal-contribuicao {
+    max-width: 750px;
+    max-height: 98vh;
+}
+
+.modal-lg {
+    max-width: 900px;
+    width: 95%;
+}
+
+.modal-contribuicao .modal-body {
+    padding: 2rem;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Toast/Notificações */
+.toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--cor-branco);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra-forte);
+    z-index: 2000;
+    min-width: 300px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Loading */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--cor-branco);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 1rem; }
+.gap-4 { gap: 2rem; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* Alpine.js - Hide elements before initialization */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .modal {
+        width: 95%;
+    }
+}
+
+/* Animação sutil para botão de contribuição */
+@keyframes pulse-subtle {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+}
+
+.btn-contribuir {
+    animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.btn-contribuir:hover {
+    animation: none;
+}
+
+/* Estilos de Impressão */
+@media print {
+    /* Ocultar elementos não necessários */
+    header,
+    footer,
+    .no-print,
+    .btn,
+    button,
+    .filters,
+    .loading,
+    nav,
+    aside {
+        display: none !important;
+    }
+
+    /* Resetar cores de fundo para economizar tinta */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    /* Container principal */
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* Título da página */
+    .page-header {
+        margin-bottom: 20px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 18pt;
+        color: black !important;
+    }
+
+    /* Tabelas */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: auto;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        font-size: 10pt;
+    }
+
+    th {
+        background-color: #f0f0f0 !important;
+        font-weight: bold;
+        color: black !important;
+    }
+
+    /* Badges - usar apenas borda para economizar tinta */
+    .badge {
+        border: 1px solid #000 !important;
+        background: white !important;
+        color: black !important;
+        padding: 2px 6px;
+        font-size: 9pt;
+    }
+
+    /* Ocultar colunas específicas na impressão */
+    .print-hide {
+        display: none !important;
+    }
+
+    /* Ajustar valores monetários */
+    .text-green-600,
+    .text-red-600,
+    .text-blue-600 {
+        color: black !important;
+    }
+
+    /* Quebra de página */
+    .page-break {
+        page-break-after: always;
+    }
+
+    /* Cards em modo de impressão */
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+
+    /* Links */
+    a {
+        text-decoration: none;
+        color: black !important;
+    }
+
+    /* Remover sombras */
+    * {
+        box-shadow: none !important;
+    }
+}
